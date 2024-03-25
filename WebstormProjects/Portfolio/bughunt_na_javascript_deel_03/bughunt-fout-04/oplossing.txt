@@ -1,0 +1,3 @@
+er wordt geen event aangemaakt om de functie te laden in de window
++
+de functie is niet gestructureerd als een functie

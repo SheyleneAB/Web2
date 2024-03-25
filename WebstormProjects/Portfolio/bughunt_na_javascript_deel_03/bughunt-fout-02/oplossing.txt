@@ -1,0 +1,5 @@
+ipv id staat er in de html file een classe bij de button,
+hierbij moet men ofwel met een id werken in de html file
+ofwel zet men (als er enkel 1 element is) een [0] nadat we de item kiezen
++ dit verandert
+let btnKopieer=document.getElementsByClassName("btnKopieer")[0];
