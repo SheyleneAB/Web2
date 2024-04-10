@@ -1,4 +1,5 @@
 const setup = () => {
+    update();
     let colorDemos=document.getElementsByClassName("colorDemo");
     let sliders = document.getElementsByClassName("slider");
 
@@ -10,8 +11,7 @@ const setup = () => {
     }
 
 
-    // maak het blokje rood
-    colorDemos[0].style.backgroundColor="red";
+
 }
 
 const update = () => {
