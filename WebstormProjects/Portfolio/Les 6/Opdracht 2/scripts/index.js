@@ -1,6 +1,6 @@
 const setup = () => {
 	// registeer click event listener 'voegToe' bij #btnAdd
-    let btnAdd = document.getElementById("btnAdd");
+    let btnAdd = document.querySelector("#btnAdd");
     btnAdd.addEventListener("click", voegToe);
 
 	// registreer click event listener 'wisAlles' bij #btnClear
@@ -8,15 +8,21 @@ const setup = () => {
     btnClear.addEventListener("click", wisAlles);
 	
 	// registreer click event listener 'maakBelangrijk' bij elke <li> in .lstIngredients
-    let lstIngredients = document.getElementById("lstIngredients")
-    lstIngredients.addEventListener("click", maakBelangrijk);
+    let lstIngredients = document.querySelectorAll("#lstIngredients li")
+    for (let i=0;i<lstIngredients.length;i++) {
+        lstIngredients[i].addEventListener("click", maakBelangrijk);
+    }
+
 }
 
 const voegToe = () => {
 	// Lees de tekst uit het textveld en voeg nieuw <li> element toe
-    let txtveld = document.getElementById("txtInput")
-    let lstIngredients =document.getElementById("lstIngredients")
-    lstIngredients.innerHTML += `<li>${txtveld.value}</li>`;
+    let txtveld = document.getElementById("txtInput");
+    let lstIngredients =document.getElementById("lstIngredients");
+    lstIngredients.insertAdjacentHTML("beforeend",`<li>${txtveld.value}</li>` );
+
+    let laatste = document.querySelector("#lstIngredients li:last-of-type");
+    laatste.addEventListener("click", maakBelangrijk);
 }
 
 const wisAlles = () => {
